@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的收藏 - 网址收藏</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828673.png">
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="mainBag"></div>
+        
+        <!-- 添加顶部导航 -->
+        <div class="top-nav">
+            <a href="index.html" class="favorites-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="返回">
+                <span>返回首页</span>
+            </a>
+        </div>
+
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="./static/images/default.png" alt="logo">
+                <span>我的导航</span>
+            </div>
+            <nav class="category-nav">
+                <a href="index.html" class="category-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="返回">
+                    <span>返回首页</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索收藏...">
+                    <button class="search-btn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="搜索">
+                    </button>
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="category-content active" id="favorites">
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">我的收藏</h3>
+                        <div class="card-grid" id="favorites-grid">
+                            <!-- 收藏的内容将通过JavaScript动态加载 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const favoritesGrid = document.getElementById('favorites-grid');
+            const searchInput = document.getElementById('searchInput');
+            
+            // 从localStorage获取收藏数据
+            function getFavorites() {
+                const favorites = localStorage.getItem('favorites');
+                return favorites ? JSON.parse(favorites) : [];
+            }
+
+            // 显示收藏内容
+            function displayFavorites(favorites) {
+                favoritesGrid.innerHTML = '';
+                
+                if (favorites.length === 0) {
+                    favoritesGrid.innerHTML = '<div class="empty-state">还没有收藏任何网站</div>';
+                    return;
+                }
+
+                favorites.forEach(item => {
+                    const card = document.createElement('a');
+                    card.href = item.url;
+                    card.className = 'card';
+                    card.target = '_blank';
+                    
+                    card.innerHTML = `
+                        <div class="card-content">
+                            <img src="${item.icon}" alt="${item.title}" class="card-icon">
+                            <h3>${item.title}</h3>
+                            <p>${item.desc}</p>
+                            <button class="favorite-toggle active" data-url="${item.url}" data-title="${item.title}" data-desc="${item.desc}" data-icon="${item.icon}">
+                                <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                            </button>
+                        </div>
+                    `;
+
+                    favoritesGrid.appendChild(card);
+                });
+
+                // 初始化收藏按钮
+                initFavoriteButtons();
+            }
+
+            // 初始化收藏按钮
+            function initFavoriteButtons() {
+                const buttons = document.querySelectorAll('.favorite-toggle');
+                
+                buttons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        const url = button.dataset.url;
+                        let favorites = getFavorites();
+                        
+                        // 从收藏中移除
+                        favorites = favorites.filter(item => item.url !== url);
+                        localStorage.setItem('favorites', JSON.stringify(favorites));
+                        
+                        // 重新显示收藏列表
+                        displayFavorites(favorites);
+                    });
+                });
+            }
+
+            // 搜索功能
+            function performSearch(searchTerm) {
+                searchTerm = searchTerm.toLowerCase().trim();
+                const favorites = getFavorites();
+                
+                if (!searchTerm) {
+                    displayFavorites(favorites);
+                    return;
+                }
+
+                const filteredFavorites = favorites.filter(item => 
+                    item.title.toLowerCase().includes(searchTerm) ||
+                    item.desc.toLowerCase().includes(searchTerm) ||
+                    item.url.toLowerCase().includes(searchTerm)
+                );
+
+                displayFavorites(filteredFavorites);
+            }
+
+            // 搜索事件监听
+            searchInput.addEventListener('input', (e) => {
+                performSearch(e.target.value);
+            });
+
+            // 初始显示收藏内容
+            displayFavorites(getFavorites());
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的导航 - 网址收藏</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828673.png">
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="mainBag"></div>
+        
+        <!-- 添加顶部导航 -->
+        <div class="top-nav">
+            <a href="favorites.html" class="favorites-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="收藏">
+                <span>我的收藏</span>
+            </a>
+        </div>
+
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="./static/images/default.png" alt="logo">
+                <span>我的导航</span>
+            </div>
+            <nav class="category-nav">
+                <a href="#" class="category-item active" data-category="common">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="常用">
+                    <span>常用导航</span>
+                </a>
+                <a href="#" class="category-item" data-category="dev">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png" alt="开发">
+                    <span>开发工具</span>
+                </a>
+                <a href="#" class="category-item" data-category="design">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946437.png" alt="设计">
+                    <span>设计资源</span>
+                </a>
+                <a href="#" class="category-item" data-category="ai">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="AI">
+                    <span>AI工具</span>
+                </a>
+                <a href="#" class="category-item" data-category="study">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="学习">
+                    <span>学习资源</span>
+                </a>
+                <a href="#" class="category-item" data-category="spider">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946435.png" alt="爬虫">
+                    <span>爬虫百宝箱</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索网站...">
+                    <button class="search-btn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="搜索">
+                    </button>
+                </div>
+            </div>
+            <div class="content-container">
+                <!-- 常用导航分类 -->
+                <div class="category-content active" id="common">
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">热门网站</h3>
+                        <div class="card-grid">
+                            <!-- 视频网站 -->
+                            <a href="https://www.bilibili.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.bilibili.com/favicon.ico" alt="Bilibili" class="card-icon">
+                                    <h3>Bilibili</h3>
+                                    <p>视频分享平台</p>
+                                    <button class="favorite-toggle" data-url="https://www.bilibili.com" data-title="Bilibili" data-desc="视频分享平台" data-icon="https://www.bilibili.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.youtube.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.youtube.com/favicon.ico" alt="YouTube" class="card-icon">
+                                    <h3>YouTube</h3>
+                                    <p>国际视频平台</p>
+                                    <button class="favorite-toggle" data-url="https://www.youtube.com" data-title="YouTube" data-desc="国际视频平台" data-icon="https://www.youtube.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">社交媒体</h3>
+                        <div class="card-grid">
+                            <a href="https://www.zhihu.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://static.zhihu.com/heifetz/favicon.ico" alt="知乎" class="card-icon">
+                                    <h3>知乎</h3>
+                                    <p>问答社区</p>
+                                    <button class="favorite-toggle" data-url="https://www.zhihu.com" data-title="知乎" data-desc="问答社区" data-icon="https://static.zhihu.com/heifetz/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://twitter.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://twitter.com/favicon.ico" alt="Twitter" class="card-icon">
+                                    <h3>Twitter</h3>
+                                    <p>国际社交平台</p>
+                                    <button class="favorite-toggle" data-url="https://twitter.com" data-title="Twitter" data-desc="国际社交平台" data-icon="https://twitter.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">购物网站</h3>
+                        <div class="card-grid">
+                            <a href="https://www.taobao.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.taobao.com/favicon.ico" alt="淘宝" class="card-icon">
+                                    <h3>淘宝</h3>
+                                    <p>购物平台</p>
+                                    <button class="favorite-toggle" data-url="https://www.taobao.com" data-title="淘宝" data-desc="购物平台" data-icon="https://www.taobao.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.jd.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.jd.com/favicon.ico" alt="京东" class="card-icon">
+                                    <h3>京东</h3>
+                                    <p>综合购物平台</p>
+                                    <button class="favorite-toggle" data-url="https://www.jd.com" data-title="京东" data-desc="综合购物平台" data-icon="https://www.jd.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 开发工具分类 -->
+                <div class="category-content" id="dev">
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">编辑器</h3>
+                        <div class="card-grid">
+                            <a href="https://code.visualstudio.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://code.visualstudio.com/favicon.ico" alt="VS Code" class="card-icon">
+                                    <h3>VS Code</h3>
+                                    <p>代码编辑器</p>
+                                    <button class="favorite-toggle" data-url="https://code.visualstudio.com" data-title="VS Code" data-desc="代码编辑器" data-icon="https://code.visualstudio.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.jetbrains.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.jetbrains.com/favicon.ico" alt="JetBrains" class="card-icon">
+                                    <h3>JetBrains</h3>
+                                    <p>专业IDE</p>
+                                    <button class="favorite-toggle" data-url="https://www.jetbrains.com" data-title="JetBrains" data-desc="专业IDE" data-icon="https://www.jetbrains.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">代码托管</h3>
+                        <div class="card-grid">
+                            <a href="https://github.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://github.com/favicon.ico" alt="GitHub" class="card-icon">
+                                    <h3>GitHub</h3>
+                                    <p>代码托管平台</p>
+                                    <button class="favorite-toggle" data-url="https://github.com" data-title="GitHub" data-desc="代码托管平台" data-icon="https://github.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://gitee.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://gitee.com/favicon.ico" alt="Gitee" class="card-icon">
+                                    <h3>Gitee</h3>
+                                    <p>国内代码托管平台</p>
+                                    <button class="favorite-toggle" data-url="https://gitee.com" data-title="Gitee" data-desc="国内代码托管平台" data-icon="https://gitee.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">编程博客</h3>
+                        <div class="card-grid">
+                            <a href="https://juejin.cn" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://juejin.cn/favicon.ico" alt="掘金" class="card-icon">
+                                    <h3>掘金</h3>
+                                    <p>技术分享社区</p>
+                                    <button class="favorite-toggle" data-url="https://juejin.cn" data-title="掘金" data-desc="技术分享社区" data-icon="https://juejin.cn/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.csdn.net" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.csdn.net/favicon.ico" alt="CSDN" class="card-icon">
+                                    <h3>CSDN</h3>
+                                    <p>程序员知识社区</p>
+                                    <button class="favorite-toggle" data-url="https://www.csdn.net" data-title="CSDN" data-desc="程序员知识社区" data-icon="https://www.csdn.net/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.bookstack.cn/read/BigData-Notes/README.md" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.csdn.net/favicon.ico" alt="大数据指南" class="card-icon">
+                                    <h3>bookstack</h3>
+                                    <p>大数据入门指南</p>
+                                    <button class="favorite-toggle" data-url="https://www.csdn.net" data-title="大数据入门指南" data-desc="大数据入门指南" data-icon="https://static.sitestack.cn/projects/BigData-Notes/pictures/hadoop.jpg">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">编程手册</h3>
+                        <div class="card-grid">
+                            <a href="https://www.runoob.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.runoob.com/favicon.ico" alt="菜鸟教程" class="card-icon">
+                                    <h3>菜鸟教程</h3>
+                                    <p>编程入门教程</p>
+                                    <button class="favorite-toggle" data-url="https://www.runoob.com" data-title="菜鸟教程" data-desc="编程入门教程" data-icon="https://www.runoob.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://developer.mozilla.org" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://developer.mozilla.org/favicon.ico" alt="MDN" class="card-icon">
+                                    <h3>MDN</h3>
+                                    <p>Web开发文档</p>
+                                    <button class="favorite-toggle" data-url="https://developer.mozilla.org" data-title="MDN" data-desc="Web开发文档" data-icon="https://developer.mozilla.org/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">编程工具</h3>
+                        <div class="card-grid">
+                            <a href="https://stackoverflow.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://stackoverflow.com/favicon.ico" alt="Stack Overflow" class="card-icon">
+                                    <h3>Stack Overflow</h3>
+                                    <p>程序员问答社区</p>
+                                    <button class="favorite-toggle" data-url="https://stackoverflow.com" data-title="Stack Overflow" data-desc="程序员问答社区" data-icon="https://stackoverflow.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://leetcode.cn" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://leetcode.cn/favicon.ico" alt="LeetCode" class="card-icon">
+                                    <h3>LeetCode</h3>
+                                    <p>刷题练习平台</p>
+                                    <button class="favorite-toggle" data-url="https://leetcode.cn" data-title="LeetCode" data-desc="刷题练习平台" data-icon="https://leetcode.cn/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI工具分类 -->
+                <div class="category-content" id="ai">
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">AI助手</h3>
+                        <div class="card-grid">
+                            <a href="https://chat.openai.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT" class="card-icon">
+                                    <h3>ChatGPT</h3>
+                                    <p>AI对话助手</p>
+                                    <button class="favorite-toggle" data-url="https://chat.openai.com" data-title="ChatGPT" data-desc="AI对话助手" data-icon="https://chat.openai.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://claude.ai" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://claude.ai/favicon.ico" alt="Claude" class="card-icon">
+                                    <h3>Claude</h3>
+                                    <p>Anthropic AI助手</p>
+                                    <button class="favorite-toggle" data-url="https://claude.ai" data-title="Claude" data-desc="Anthropic AI助手" data-icon="https://claude.ai/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">AI绘画</h3>
+                        <div class="card-grid">
+                            <a href="https://www.midjourney.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.midjourney.com/favicon.ico" alt="Midjourney" class="card-icon">
+                                    <h3>Midjourney</h3>
+                                    <p>AI图像生成</p>
+                                    <button class="favorite-toggle" data-url="https://www.midjourney.com" data-title="Midjourney" data-desc="AI图像生成" data-icon="https://www.midjourney.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://stability.ai" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://stability.ai/favicon.ico" alt="Stable Diffusion" class="card-icon">
+                                    <h3>Stable Diffusion</h3>
+                                    <p>开源AI绘画模型</p>
+                                    <button class="favorite-toggle" data-url="https://stability.ai" data-title="Stable Diffusion" data-desc="开源AI绘画模型" data-icon="https://stability.ai/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 设计资源分类 -->
+                <div class="category-content" id="design">
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">设计工具</h3>
+                        <div class="card-grid">
+                            <a href="https://www.figma.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.figma.com/favicon.ico" alt="Figma" class="card-icon">
+                                    <h3>Figma</h3>
+                                    <p>在线设计工具</p>
+                                    <button class="favorite-toggle" data-url="https://www.figma.com" data-title="Figma" data-desc="在线设计工具" data-icon="https://www.figma.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.sketch.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.sketch.com/favicon.ico" alt="Sketch" class="card-icon">
+                                    <h3>Sketch</h3>
+                                    <p>矢量设计工具</p>
+                                    <button class="favorite-toggle" data-url="https://www.sketch.com" data-title="Sketch" data-desc="矢量设计工具" data-icon="https://www.sketch.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">设计素材</h3>
+                        <div class="card-grid">
+                            <a href="https://dribbble.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://dribbble.com/favicon.ico" alt="Dribbble" class="card-icon">
+                                    <h3>Dribbble</h3>
+                                    <p>设计灵感社区</p>
+                                    <button class="favorite-toggle" data-url="https://dribbble.com" data-title="Dribbble" data-desc="设计灵感社区" data-icon="https://dribbble.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.behance.net" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.behance.net/favicon.ico" alt="Behance" class="card-icon">
+                                    <h3>Behance</h3>
+                                    <p>创意设计社区</p>
+                                    <button class="favorite-toggle" data-url="https://www.behance.net" data-title="Behance" data-desc="创意设计社区" data-icon="https://www.behance.net/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">图标资源</h3>
+                        <div class="card-grid">
+                            <a href="https://www.iconfont.cn" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.iconfont.cn/favicon.ico" alt="Iconfont" class="card-icon">
+                                    <h3>Iconfont</h3>
+                                    <p>阿里巴巴图标库</p>
+                                    <button class="favorite-toggle" data-url="https://www.iconfont.cn" data-title="Iconfont" data-desc="阿里巴巴图标库" data-icon="https://www.iconfont.cn/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://fontawesome.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://fontawesome.com/favicon.ico" alt="Font Awesome" class="card-icon">
+                                    <h3>Font Awesome</h3>
+                                    <p>图标字体库</p>
+                                    <button class="favorite-toggle" data-url="https://fontawesome.com" data-title="Font Awesome" data-desc="图标字体库" data-icon="https://fontawesome.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 学习资源分类 -->
+                <div class="category-content" id="study">
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">在线课程</h3>
+                        <div class="card-grid">
+                            <a href="https://www.coursera.org" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.coursera.org/favicon.ico" alt="Coursera" class="card-icon">
+                                    <h3>Coursera</h3>
+                                    <p>国际在线课程平台</p>
+                                    <button class="favorite-toggle" data-url="https://www.coursera.org" data-title="Coursera" data-desc="国际在线课程平台" data-icon="https://www.coursera.org/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.udemy.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.udemy.com/favicon.ico" alt="Udemy" class="card-icon">
+                                    <h3>Udemy</h3>
+                                    <p>实用技能学习平台</p>
+                                    <button class="favorite-toggle" data-url="https://www.udemy.com" data-title="Udemy" data-desc="实用技能学习平台" data-icon="https://www.udemy.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">中文教程</h3>
+                        <div class="card-grid">
+                            <a href="https://www.imooc.com" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.imooc.com/favicon.ico" alt="慕课网" class="card-icon">
+                                    <h3>慕课网</h3>
+                                    <p>实战编程教程</p>
+                                    <button class="favorite-toggle" data-url="https://www.imooc.com" data-title="慕课网" data-desc="实战编程教程" data-icon="https://www.imooc.com/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.w3school.com.cn" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://www.w3school.com.cn/favicon.ico" alt="W3School" class="card-icon">
+                                    <h3>W3School</h3>
+                                    <p>Web技术教程</p>
+                                    <button class="favorite-toggle" data-url="https://www.w3school.com.cn" data-title="W3School" data-desc="Web技术教程" data-icon="https://www.w3school.com.cn/favicon.ico">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">网盘分享</h3>
+                        <div class="card-grid">
+                            <a href="https://www.123684.com/s/RmKwTd-FbOod" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://pp.myapp.com/ma_icon/0/icon_54190090_1734574627/256" alt="123网盘" class="card-icon">
+                                    <h3>123网盘</h3>
+                                    <p>存放些软件或者资料</p>
+                                    <button class="favorite-toggle" data-url="https://www.123684.com/s/RmKwTd-FbOod" data-title="123网盘" data-desc="存放些软件或者资料" data-icon="https://www.123684.com/s/RmKwTd-FbOod">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 爬虫百宝箱分类 -->
+                <div class="category-content" id="spider">
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">在线工具</h3>
+                        <div class="card-grid">
+                            <a href="https://spidertools.cn/#/formatJSON" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://logo.clearbit.com/spidertools.cn" alt="爬虫工具库" class="card-icon">
+                                    <h3>爬虫工具库</h3>
+                                    <p>在线爬虫工具集合</p>
+                                    <button class="favorite-toggle" data-url="https://spidertools.cn/#/formatJSON" data-title="爬虫工具库" data-desc="在线爬虫工具集合" data-icon="https://logo.clearbit.com/spidertools.cn">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://tool.lu/" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://logo.clearbit.com/tool.lu" alt="在线工具" class="card-icon">
+                                    <h3>在线工具</h3>
+                                    <p>你的工具箱</p>
+                                    <button class="favorite-toggle" data-url="https://tool.lu/" data-title="在线工具" data-desc="你的工具箱" data-icon="https://logo.clearbit.com/tool.lu">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">代码工具</h3>
+                        <div class="card-grid">
+                            <a href="https://www.itutool.com/tools/javascript-deobfuscator" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://logo.clearbit.com/www.itutool.com" alt="JS反混淆" class="card-icon">
+                                    <h3>JS反混淆</h3>
+                                    <p>在线JS反混淆解密还原工具</p>
+                                    <button class="favorite-toggle" data-url="https://www.itutool.com/tools/javascript-deobfuscator" data-title="JS反混淆" data-desc="在线JS反混淆解密还原工具" data-icon="https://logo.clearbit.com/www.itutool.com">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://curlconverter.com/" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://logo.clearbit.com/curlconverter.com" alt="Curl转换器" class="card-icon">
+                                    <h3>Curl转换器</h3>
+                                    <p>将curl命令转换为代码</p>
+                                    <button class="favorite-toggle" data-url="https://curlconverter.com/" data-title="Curl转换器" data-desc="将curl命令转换为代码" data-icon="https://logo.clearbit.com/curlconverter.com">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">学习资源</h3>
+                        <div class="card-grid">
+                            <a href="https://github.com/sml2h3/ddddocr" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://logo.clearbit.com/github.com" alt="ddddocr" class="card-icon">
+                                    <h3>ddddocr</h3>
+                                    <p>通用验证码识别OCR</p>
+                                    <button class="favorite-toggle" data-url="https://github.com/sml2h3/ddddocr" data-title="ddddocr" data-desc="通用验证码识别OCR" data-icon="https://logo.clearbit.com/github.com">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://github.com/LZHaini/Python3WebSpider" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://logo.clearbit.com/github.com" alt="Python3WebSpider" class="card-icon">
+                                    <h3>Python3WebSpider</h3>
+                                    <p>Python3网络爬虫开发实战</p>
+                                    <button class="favorite-toggle" data-url="https://github.com/LZHaini/Python3WebSpider" data-title="Python3WebSpider" data-desc="Python3网络爬虫开发实战" data-icon="https://logo.clearbit.com/github.com">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subcategory">
+                        <h3 class="subcategory-title">其他工具</h3>
+                        <div class="card-grid">
+                            <a href="https://www.drissionpage.cn/" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://logo.clearbit.com/www.drissionpage.cn" alt="DrissionPage" class="card-icon">
+                                    <h3>DrissionPage</h3>
+                                    <p>Python网页自动化工具</p>
+                                    <button class="favorite-toggle" data-url="https://www.drissionpage.cn/" data-title="DrissionPage" data-desc="Python网页自动化工具" data-icon="https://logo.clearbit.com/www.drissionpage.cn">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                            <a href="https://www.dcode.fr/javascript-unobfuscator" class="card" target="_blank">
+                                <div class="card-content">
+                                    <img src="https://logo.clearbit.com/www.dcode.fr" alt="JS解混淆" class="card-icon">
+                                    <h3>JS解混淆</h3>
+                                    <p>在线JavaScript解混淆工具</p>
+                                    <button class="favorite-toggle" data-url="https://www.dcode.fr/javascript-unobfuscator" data-title="JS解混淆" data-desc="在线JavaScript解混淆工具" data-icon="https://logo.clearbit.com/www.dcode.fr">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="收藏" class="favorite-icon">
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./static/js/main.js"></script>
+</body>
+</html> 
